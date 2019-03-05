@@ -30,6 +30,7 @@ public class HazelcastQueryController implements CommandLineRunner {
     @Autowired
     private HazelcastInstance hazelcastInstance;
 
+
     @GetMapping(value = "/getAuthList")
     public Set<Author> getAuthorListAgeGreaterThanWithParam(@RequestParam("age") int age) {
         IMap authorMap = hazelcastInstance.getMap("authorMap");
