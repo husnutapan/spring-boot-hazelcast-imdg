@@ -34,7 +34,7 @@ public class HazelcastQueryController implements CommandLineRunner {
     @GetMapping(value = "/getAuthList")
     public Set<Author> getAuthorListAgeGreaterThanWithParam(@RequestParam("age") int age) {
         IMap authorMap = hazelcastInstance.getMap("authorMap");
-        Set<Author> authorSet = (Set<Author>) authorMap.values(new SqlPredicate("age >edan" + age));
+        Set<Author> authorSet = (Set<Author>) authorMap.values(new SqlPredicate("age >  " + age));
         return authorSet;
     }
 
